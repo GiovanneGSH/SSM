@@ -1,0 +1,36 @@
+def escolhaMeioPagamento():
+    meioDePagamento = int(input("Escolha o meio de pagamento: "))
+    return meioDePagamento
+
+def mensagemInválida():
+    print("Opção Inválida!")
+
+def valorCompra():
+    valorCompra = float(input("Valor da compra: "))
+    return valorCompra
+
+def validaMeioPagamento():
+    meioPagamento = escolhaMeioPagamento()
+    opcoesPagamento = [0, 1, 2, 9]
+
+    while meioPagamento not in opcoesPagamento:
+        mensagemInválida()
+        validaMeioPagamento()    
+    quit()
+    return meioPagamento    
+
+def MDR(valorCompra):
+    taxa = (valorCompra * 1) / 100
+    return taxa
+
+def meioPagamentoSelecionado():
+   meioPagamento = validaMeioPagamento()
+   
+   if meioPagamento == (0):
+        valorCompra = valorCompra()
+        taxa = MDR(valorCompra)
+        valorLiquido = valorCompra - taxa        
+        print(valorLiquido)
+       
+
+meioPagamentoSelecionado()
